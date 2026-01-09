@@ -1,0 +1,17 @@
+# Create simple DataFrame
+data = [("Apple", 1), ("Orange", 2), ("Banana", 3)]
+df = spark.createDataFrame(data, ["Fruit", "Value"])
+
+df.show()
+
+#printing the schema
+print("SCHEMA:")
+df.printSchema()
+
+#Displaying The Column
+print("Display of a column")
+df.select("Fruit").show()
+
+#Filtering
+print("Filtering")
+df.filter(df.Value > 1).show()
